@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import render
 import requests
 import urllib.parse
 
@@ -23,3 +23,5 @@ def home(request):
             return render(request, 'portfolio/thank.html')
 
     return render(request, "portfolio/index.html")
+
+
