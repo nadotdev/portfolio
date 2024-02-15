@@ -13,6 +13,7 @@ WORKDIR /core
 COPY requirements.txt /core/
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
+
 # Install vim (if needed, you can remove this line if not necessary)
 RUN apt-get update && apt-get install -y vim && rm -rf /var/lib/apt/lists/*
 
