@@ -181,7 +181,7 @@
             <p class="section-subtitle">What school i attended?</p>
             <h6 class="section-title mb-6">Education</h6>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <a href="#" class="portfolio-card">
                         <img src="{% static 'images/edu1.png' %}" class="portfolio-card-img" >    
                         <span class="portfolio-card-overlay">
@@ -192,7 +192,7 @@
                         </span>                     
                     </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <a href="#" class="portfolio-card">
                         <img class="portfolio-card-img" src="{% static 'images/aii.png' %}" class="img-responsive rounded" >
                         <span class="portfolio-card-overlay">
@@ -203,7 +203,7 @@
                         </span>                         
                     </a>
                 </div>
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                     <a href="#" class="portfolio-card">
                         <img class="portfolio-card-img" src="{% static 'images/online-training.jpeg' %}" class="img-responsive rounded" >    
                         <span class="portfolio-card-overlay">
@@ -213,7 +213,7 @@
                             </span>                         
                         </span>                     
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -398,17 +398,23 @@
         <div class="container text-center">
             <p class="section-subtitle">How can you communicate?</p>
             <h6 class="section-title mb-5">Contact Me</h6>
+
             <!-- contact form -->
-            <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
+            <form action="" method="post" class="contact-form col-md-10 col-lg-8 m-auto">
+                {% csrf_token %}
+
                 <div class="form-row">
                     <div class="form-group col-sm-6">
-                        <input type="text" size="50" class="form-control" placeholder="Your Name" required>                 
+                        <input type="text" name="message_subject" size="50" class="form-control" placeholder="Subject" required>                 
                     </div>
                     <div class="form-group col-sm-6">
-                        <input type="email" class="form-control" placeholder="Enter Email"requried>                 
+                        <input type="email" name="email" class="form-control" placeholder="Email" requried>                 
                     </div>
                     <div class="form-group col-sm-12">
-                        <textarea name="comment" id="comment" rows="6"   class="form-control" placeholder="Write Something"></textarea>
+                        <textarea name="comment" id="comment" name="comment" rows="6" class="form-control" placeholder="Say something to me 🙈"></textarea>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <p>This will send your input message to my telegram 🥳 </p>
                     </div>
                     <div class="form-group col-sm-12 mt-3">
                         <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">                  
