@@ -23,7 +23,7 @@
                             <a href="#"><i class="ti-comment"></i> 123</a> -->
                             <p>Posted on | {{ blog.posted_date }}</p>
                         </p>
-                        <div
+                        <!-- <div
                             style="
                                 width: 100%;
                                 line-height: 1.2em;
@@ -33,11 +33,11 @@
                                 -webkit-box-orient: vertical;
                                 -webkit-line-clamp: 3;
                             "
-                        >
-                            {{ blog.description }}
-                        </div>
-
-                        <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                        > {{ blog.description|safe }}
+                           
+                        </div> -->
+                       
+                        <a href="detail/{{ blog.id }}" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
                     </div>
                 </div>
             {% endfor %}
