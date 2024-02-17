@@ -1,6 +1,5 @@
-
-from django.contrib import admin
 from django.urls import include, path
+from blog.models import Blog
 from core import settings
 from django.conf.urls.static import static
 
@@ -16,10 +15,11 @@ class OTPAdmin(OTPAdminSite):
 admin_site = OTPAdmin(name='OTPAdmin')
 admin_site.register(User)
 admin_site.register(TOTPDevice, TOTPDeviceAdmin)
+admin_site.register(Blog)
+admin_site.site_header = "admin@clounda.xyz"
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('admin/', admin_site.urls),
     path("", include("portfolio.urls")),
     path("blogs/", include("blog.urls")),
