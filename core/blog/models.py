@@ -5,6 +5,6 @@ class Blog(models.Model):
     title = models.CharField(max_length=255, unique=True, null=False, blank=False)
     thumbnail = models.ImageField(upload_to='blog_thumbnail')
     slug = models.SlugField(default="", null=False)
-    description = CKEditor5Field('Text', config_name='extends')
+    description = CKEditor5Field('Text', config_name='extends', default='')
     posted_date = models.DateField(auto_now=True)
     
