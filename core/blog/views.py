@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Blog
 
+
 def blog_view(request):
     blogs = Blog.objects.all().order_by('-posted_date')
     context = {

@@ -1,9 +1,12 @@
 {% load static %}
-    
     <!-- footer -->
     <div class="container">
         <footer class="footer">       
-            <p class="mb-0">Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="https://github.com/nadotdev" target="_blank">@nadotdev</a></p>
+            <div>
+                <p class="mb-0">Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="https://github.com/nadotdev" target="_blank">@nadotdev</a></p>
+                <p class="mb-0"><a href="/admin" target="_blank">@admin</a></p>
+            </div>
+
             <div class="social-links text-right m-auto ml-sm-auto">
                 <a href="https://www.facebook.com/justna.privatee?mibextid=opq0tG" target="_blanks" class="link"><i class="ti-facebook"></i></a>
                 <a href="mailto:nadotdev@gmail.com" target="_blank" class="link"><i class="ti-google"></i></a>
@@ -19,16 +22,6 @@
     <!-- bootstrap 3 affix -->
 	<script src="{% static 'assets/vendors/bootstrap/bootstrap.affix.js' %}"></script>
 
-    <script src="{% static 'assets/js/meyawo.js' %}"></script>
-
-    <!-- Owl -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="{% static 'owlcarousel/owl.carousel.min.js' %}"></script>
-    <script>
-        $(document).ready(function(){
-            $(".owl-carousel").owlCarousel();
-        });
-    </script> -->
-
+    <script src="{% static 'assets/js/app.js' %}"></script>
 </body>
 </html>
