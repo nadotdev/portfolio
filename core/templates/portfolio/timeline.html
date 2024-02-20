@@ -4,7 +4,7 @@
         <li class="timeline-item mb-5">
           <h5 class="fw-bold">{{ timeline.title }}</h5>
           <p class="text-muted mb-2 fw-bold">
-            <b>Joined: </b>{{ timeline.started_date|date:'Y-m-d' }} |  <b>Ended: </b>{{ timeline.started_date|date:'Y-m-d' }}
+            <b>Joined: </b>{{ timeline.started_date|date:'Y-m-d' }} |  <b>Ended: </b>{{ timeline.ended_date|date:'Y-m-d' }}
           </p>
           <p class="text-muted">
             {{ timeline.content|safe }}

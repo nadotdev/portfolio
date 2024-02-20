@@ -1,11 +1,10 @@
 {% load static %}
-<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="nadotdev @cloudna.xyz clounda cloudna.xyz">
-    <meta name="author" content="Devcrud">
+    <meta name="author" content="nadotdev">
     <title>@nadotdev | Page</title>
 
     <link rel="icon" type="image/x-icon" href="{% static '/images/favicon.ico' %}">
@@ -13,17 +12,16 @@
     <!-- font icons -->
     <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
     <!-- Bootstrap styles -->
-	<link rel="stylesheet" href="{% static 'assets/css/meyawo.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/app.css' %}">
 </head>
 
 <div class="container">
     <div style="display: flex;" class="mt-5">
-        <b><a href="/blogs">⬅️ Back</a></b>
+        <b><a href="/blogs">Back</a></b>
     </div>
     <h5 class="text-center">☺︎</h5>
     <h2 class="section-title mb-6 text-center">Blog Detail</h2>
     <hr>
-
     <h1>{{ blog.title }}</h1>
     <p>{{ blog.posted_date }}</p>
     <div>
