@@ -7,7 +7,7 @@
   .timeline-card {
     padding: 40px !important;
     border: 1px solid hsla(210,18%,87%,1);
-    box-shadow: 0 0 100px #dddddd7a;
+    box-shadow: 0 3px 6px rgba(140,149,159,0.15);
     border-radius: 5px;
   }
 

@@ -1,37 +1,12 @@
-
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with Meyawo landing page.">
-    <meta name="author" content="Devcrud">
-    <title>@nadotdev | Page</title>
+{% include 'shared/header.html' %}
 
-    <link rel="icon" type="image/x-icon" href="{% static '/images/favicon.ico' %}">
-
-    <!-- font icons -->
-    <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
-    <!-- Bootstrap styles -->
-	<link rel="stylesheet" href="{% static 'assets/css/meyawo.css' %}">
-    <style>
-        .thanks-wrapper {
-            width: 300px;
-            margin: 0 auto;
-        }
-    </style>
-</head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    <div class="thanks-wrapper">
-        <div class="image">
-             <a href="">
-                 <img src="{% static 'images/thanks.png' %}" width="100%" alt="thanks">
-             </a>
-        </div>
-        <div class="text">
-             <h1 style="text-align: center; font-size: 20px;">Thanks for your submiting. I'll get back to you ASAP!</h1>
-        </div>
-     </div>
-</body>
-</html>
+<div class="container">
+    <div class="image mb-4" style="width: 100px; margin: 0 auto;">
+        <img src="{% static 'images/check-mark.png' %}" width="100%" alt="thanks">
+    </div>
+    <div class="text">
+         <h1 style="text-align: center; font-size: 16px;">Messages was sent successfully <br> Thanks for your submiting. I'll get back to you ASAP!</h1>
+    </div>
+ </div>
+ {% include 'shared/footer.html' %}

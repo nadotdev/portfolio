@@ -5,7 +5,7 @@
           <li class="timeline-item mb-5">
             <h5 class="" style="color: #0969da;">{{ timeline.title }}</h5>
             <p style="color: #656d76; font-size: 14px;">
-              Date: {{ timeline.started_date|date:'Y' }} - {{ timeline.ended_date|date:'Y' }}
+              From: {{ timeline.started_date|date:'Y' }} - {{ timeline.ended_date|date:'Y' }}
             </p>
             <div class="mt-2">
               {{ timeline.content|safe }}
