@@ -3,7 +3,6 @@
 <div class="container mt-5 mb-5">
     <p class="section-subtitle mb-3">Recent Posts</p>
     <!-- blog section -->
-    <section class="section" id="blog">
         <div class="row mb-3">
             {% if blogs %}
                 {% for blog in blogs %}
@@ -28,9 +27,7 @@
                 <p>No blogs yet.</p>
             {% endif %}
         </div>
-    </section>
     <!-- end of blog section -->
 </div>
-
 
 {% include 'shared/footer.html' %}
