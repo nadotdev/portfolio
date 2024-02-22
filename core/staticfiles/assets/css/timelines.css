@@ -1,0 +1,31 @@
+.timeline {
+    border-left: 1px solid hsl(0, 0%, 90%);
+    position: relative;
+    list-style: none;
+  }
+
+  .timeline-card {
+    padding: 40px !important;
+    border: 1px solid hsla(210,18%,87%,1);
+    box-shadow: 0 3px 6px rgba(140,149,159,0.15);
+    border-radius: 5px;
+  }
+
+  .timeline .timeline-item {
+    position: relative;
+  }
+
+  .timeline .timeline-item:after {
+    position: absolute;
+    display: block;
+    top: 0;
+  }
+  .timeline .timeline-item:after {
+    background-color: hsla(210,18%,87%,1);
+    left: -38px;
+    border-radius: 50%;
+    height: 11px;
+    width: 11px;
+    content: "";
+    margin-top: 6px;
+  }
