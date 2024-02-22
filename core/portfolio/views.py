@@ -1,12 +1,14 @@
 from django.http import HttpResponse, HttpResponseServerError
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
 import requests
 import urllib.parse
-from portfolio.models import WorkingTimeline
+from portfolio.models import WorkingTimeline, Education, About, Technology
 
 
 TOKEN = "6728604177:AAHzoNld4gEaTg0AXAYGes3C9vE4RPbpk48"
 chat_id = "@cloudnaxyz"
+
 
 def home(request):
     if request.method == "POST":
@@ -19,38 +21,21 @@ def home(request):
 
         # Construct the Telegram API URL
         url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&parse_mode=HTML&text={encoded_text}"
-        requests.get(url).json() # sends the message trigger
+        requests.get(url).json()    # sends the message trigger
         if HttpResponse.status_code == 200:
             return render(request, 'portfolio/thank.html')
         
-    # render object of working timelines to home page
-    working_timelines_objects = WorkingTimeline.objects.all()
-    # print(working_timelines_objects)
-    context = {
-        'working_timelines_objects': working_timelines_objects
-    }      
-    return render(request, "portfolio/index.html", context)
+    # render object of timelines to home page
+    working_timelines = WorkingTimeline.objects.all()
+    edu_timelines = Education.objects.all()
+    # about = get_object_or_404(About, id=None)
+    about_obj = About.objects.latest('created_at')
+    technologies = Technology.objects.all()
 
-# def timeline_view(request):
-    try:
-        working_timelines_objects = WorkingTimeline.objects.all()
-        print(working_timelines_objects)
-        context = {
-            'working_timelines_objects': working_timelines_objects
-        }
-        return render(request, 'portfolio/timeline.html', context)
-    
-    # except SomeSpecificException:
-    #     # Handle specific exception
-    #     # ...
-    #     return HttpResponseNotFound("Resource not found")
-    # except AnotherSpecificException:
-    #     # Handle another specific exception
-    #     # ...
-    #     return HttpResponseServerError("Internal server error")
-    except Exception as e:
-        # Handle any other unexpected exceptions
-        # Log the error
-        print(e)
-        # Return a generic error response
-        return HttpResponseServerError("An error occurred")
+    context = {
+        'working_timelines': working_timelines,
+        'edu_timelines': edu_timelines,
+        'about_obj': about_obj,
+        'technologies': technologies
+    }      
+    return render(request, "portfolio/home.html", context)

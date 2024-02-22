@@ -2,55 +2,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="@nadotdev">
-    <meta name="author" content="nadotdev">
-    <title>@nadotdev | Page</title>
+    <meta charset="UTF-8">
+    <title>Home</title>
     <link rel="icon" type="image/x-icon" href="{% static '/images/favicon.ico' %}">
-    <!-- font icons -->
-    <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
-    <!-- Bootstrap styles -->
-	<link rel="stylesheet" href="{% static 'assets/css/app.css' %}">
+    <!-- BS5 CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous"/>
+    <!-- Home CSS    -->
     <link rel="stylesheet" href="{% static 'assets/css/timelines.css' %}">
 
-</head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    <!-- Page Navbar -->
-    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
-        <div class="container">
-            <a class="logo" href="/">@cloudna.xyz</a>         
-            <ul class="nav">
-                <li class="item">
-                    <a class="link" href="#">Home</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#about">About</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#education">Education</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="/blogs">Blogs</a>
-                </li>
-            </ul>
-            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
-                <div class="hamburger-box">
-                  <div class="hamburger-inner"></div>
-                </div>
-            </a>
-        </div>          
-    </nav><!-- End of Page Navbar -->
+    <!--  Google Font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Kantumruy Pro", sans-serif;
+        }
+        .container {
+            border: 1px solid hsla(210,18%,87%,1);
+            padding: 40px;
+            box-shadow: 0 3px 6px rgba(140,149,159,0.15);
+            border-radius: 5px;
+        }
+        .card {
+            padding: 0.75rem !important;
+            border: 1px solid hsla(210,18%,87%,1);
+            padding: 40px;
+            box-shadow: 0 3px 6px rgba(140,149,159,0.15);
+            border-radius: 5px;
+        }
+        .card-img-top {
+            width: 100px !important;
+            margin: 0 auto !important;
+        }
+        .card-text {
+            color: #0969da !important;
+            font-weight: 600 !important;
+        }
 
-    <!-- page header -->
-    <header id="home" class="header">
-        <div class="overlay"></div>
-        <div class="header-content container">
-            <h1 class="header-title">
-                <span class="up">Hi!</span>
-                <span class="down">I am Sothatna</span>
-            </h1>
-            <p class="header-subtitle">Backend Developer 👨🏻‍💻</p>
+        .repo-language-color {
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 1px solid rgba(31,35,40,0.1);;
+            border-radius: 50%;
+        }
+        hr {
+            color: #ddd !important;
+        }
+        p {
+            margin-bottom: 0px !important;
+        }
+        ul {
+          margin: 0 !important ;
+        }
+
+        .blog-card {
+          width: auto; /* Adjust the width as needed */
+          border: 1px solid #ccc; /* Add border or customize as needed */
+          overflow: hidden; /* Hide any content overflow */
+
+        }
+
+      .blog-card-img {
+          width: 100%;
+          height: 150px; /* Set the desired height for the image */
+          object-fit: cover;
+          padding: 20px;
+
+      }
+
+      .blog-card-body {
+          padding: 15px; /* Add padding as needed */
+      }
+
+      .blog-card-title {
+          font-size: 18px; /* Adjust the font size as needed */
+          margin-bottom: 10px; /* Adjust margin as needed */
+      }
+
+      .blog-card-caption {
+          font-size: 12px;
+          color: #777; /* Customize color as needed */
+          margin-bottom: 8px; /* Adjust margin as needed */
+      }
+
+      .blog-card-link {
+          font-size: 14px;
+          text-decoration: none;
+          color: #007bff; /* Customize link color as needed */
+          display: block; /* Ensure the entire card area is clickable */
+      }
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/" style="font-size: 30px;">👨🏻‍💻</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blogs">Blogs</a>
+            </li>
+          </ul>
         </div>
-    </header>
-    <!-- end of page header -->
+      </div>
+    </nav>
+
+
+

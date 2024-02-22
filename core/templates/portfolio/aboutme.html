@@ -1,0 +1,16 @@
+   <section class="section" id="about">
+            <div class="about">
+                <div class="about-caption">
+                    <p class="section-title mb-3"><b>About me</b></p>
+                    {% if about_obj %}
+                        <div class="card">
+                            <div style="padding: 1rem 1rem;">
+                                {{ about_obj.describe|safe }}
+                            </div>
+                        </div>
+                    {% else %}
+                        <p class="card">Nothing to describe yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+   </section>

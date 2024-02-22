@@ -3,20 +3,26 @@
     position: relative;
     list-style: none;
   }
-  
+
+  .timeline-card {
+    padding: 40px !important;
+    border: 1px solid hsla(210,18%,87%,1);
+    box-shadow: 0 0 100px #dddddd7a;
+    border-radius: 5px;
+  }
+
   .timeline .timeline-item {
     position: relative;
   }
-  
+
   .timeline .timeline-item:after {
     position: absolute;
     display: block;
     top: 0;
   }
-  
   .timeline .timeline-item:after {
-    background-color: hsl(251.84deg 29.92% 50.2%);
-    left: -46px;
+    background-color: hsla(210,18%,87%,1);
+    left: -38px;
     border-radius: 50%;
     height: 11px;
     width: 11px;

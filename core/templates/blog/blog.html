@@ -1,56 +1,36 @@
 {% load static %}
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="nadotdev @cloudna.xyz clounda cloudna.xyz">
-    <meta name="author" content="nadotdev">
-    <title>@nadotdev | Page</title>
-
-    <link rel="icon" type="image/x-icon" href="{% static '/images/favicon.ico' %}">
-
-    <!-- font icons -->
-    <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
-    <!-- Bootstrap styles -->
-	<link rel="stylesheet" href="{% static 'assets/css/app.css' %}">
-</head>
-
+{% include 'shared/header.html' %}
+<div class="container mt-5 mb-5">
+    <p class="section-subtitle mb-3">Recent Posts</p>
     <!-- blog section -->
     <section class="section" id="blog">
-        
-        <!-- container -->
-        <div class="container text-center">
-            <div style="display: flex;">
-                <b><a href="/">Back</a></b>
-            </div>
-            <p class="section-subtitle">Recent Posts</p>
-
-            <h6 class="section-title mb-6">All Blog</h6>
-            <!-- blog-wrapper -->
-
+        <div class="row mb-3">
             {% if blogs %}
                 {% for blog in blogs %}
-                    <div class="blog-card" style="box-shadow: 0 0 30px #dddddddd;
-                    border-radius: 12px;">
+                <div class="col-md-6 mb-4">
+                    <div class="blog-card">
                         <div class="blog-card-header">
-                            <img src="{{ blog.thumbnail.url }}" class="blog-card-img" style="object-fit: cover !important;">
+                            <img src="{{ blog.thumbnail.url }}" width="100%" class="blog-card-img" style="object-fit: cover !important;">
                         </div>
                         <div class="blog-card-body">
-                            <h5 class="blog-card-title">{{ blog.title }}</h5>
-                            <p class="blog-card-caption">
-                                <p>Posted on | {{ blog.posted_date }}</p>
+                            <h5 class="blog-card-title mb-2 mt-2">{{ blog.title }}</h5>
+                            <p class="blog-card-caption" style="font-size: 12px;">
+                                Released: {{ blog.posted_date }}
                             </p>
-
-                            <a href="detail/{{ blog.id }}" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                            <a href="detail/{{ blog.id }}" style="text-decoration: none;
+                            font-size: 14px;" class="blog-card-link">Read more</a>
                         </div>
                     </div>
+                 </div>
                 {% endfor %}
+
             {% else %}
-                <p>No blogs.</p>
+                <p>No blogs yet.</p>
             {% endif %}
         </div>
     </section>
     <!-- end of blog section -->
+</div>
 
 
 {% include 'shared/footer.html' %}

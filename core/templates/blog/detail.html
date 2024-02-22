@@ -1,29 +1,17 @@
 {% load static %}
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="nadotdev @cloudna.xyz clounda cloudna.xyz">
-    <meta name="author" content="nadotdev">
-    <title>@nadotdev | Page</title>
+{% include 'shared/header.html' %}
 
-    <link rel="icon" type="image/x-icon" href="{% static '/images/favicon.ico' %}">
-
-    <!-- font icons -->
-    <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
-    <!-- Bootstrap styles -->
-	<link rel="stylesheet" href="{% static 'assets/css/app.css' %}">
-</head>
-
-<div class="container">
-    <div style="display: flex;" class="mt-5">
-        <b><a href="/blogs">Back</a></b>
-    </div>
-    <h5 class="text-center">☺︎</h5>
-    <h2 class="section-title mb-6 text-center">Blog Detail</h2>
+<div class="container mt-5 mb-5">
+    <p class="section-subtitle mb-3">Blogs details</p>
     <hr>
     <h1>{{ blog.title }}</h1>
-    <p>{{ blog.posted_date }}</p>
+    <p class="blog-card-caption" style="font-size: 12px;">
+        Released: {{ blog.posted_date }}
+    </p>
+    <br>
+    <div style="max-width: 500px; margin: 0 auto;">
+        <img src="{{ blog.thumbnail.url }}" width="100%" style="padding: 30px;">
+    </div>
     <div>
         {{ blog.description|safe}}
     </div>

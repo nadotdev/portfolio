@@ -9,16 +9,23 @@ from django_otp.admin import OTPAdminSite
 from django_otp.plugins.otp_totp.models import TOTPDevice
 from django_otp.plugins.otp_totp.admin import TOTPDeviceAdmin
 
-from portfolio.models import WorkingTimeline
+from portfolio.models import WorkingTimeline, Education, About, Technology
 from portfolio.admin import WorkingTimelineAdmin
+
+
 class OTPAdmin(OTPAdminSite):
    pass
+
 
 admin_site = OTPAdmin(name='OTPAdmin')
 admin_site.register(User)
 admin_site.register(TOTPDevice, TOTPDeviceAdmin)
 admin_site.register(Blog)
 admin_site.register(WorkingTimeline, WorkingTimelineAdmin)
+admin_site.register(Education)
+admin_site.register(About)
+admin_site.register(Technology)
+
 
 admin_site.site_header = "admin@clounda.xyz"
 

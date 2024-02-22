@@ -1,0 +1,76 @@
+{% load static %}
+{% include 'shared/header.html' %}
+<div class="container mt-5 mb-5">
+    <!-- about section -->
+    {% include 'portfolio/aboutme.html' %}
+    <!-- end of about section -->
+    <hr>
+    <section class="">
+        <p class="section-title mb-3"><b>Education Background</b></p>
+           <div class="timeline-card">
+               {% include 'portfolio/edu_timeline.html' %}
+           </div>
+    </section>
+
+
+    <hr>
+    <!-- Technology -->
+    <section>
+        <p class="section-title mb-3"><b>Technologies</b></p>
+            <div class="row ">
+            {% for tech in technologies %}
+
+                    <div class="col-md-6 mb-3">
+                        <div class="card">
+                          <div class="card-body">
+                             <p class="card-text">{{ tech.title }}</p>
+                              <p style="font-size: 14px; margin-top: 8px;">
+                                  <span class="repo-language-color" style="background-color: #3572A5"></span>
+                                    {{ tech.sub_title}}
+                                  </p>
+                          </div>
+                        </div>
+                    </div>
+
+            {% endfor %}
+            </div>
+
+    </section>
+    <hr>
+    <section class="" id="">
+        <p class="section-title mb-3"><b>Working Timelines</b></p>
+           <div class="timeline-card">
+               {% include 'portfolio/working_timeline.html' %}
+           </div>
+    </section>
+    <hr>
+    <!-- contact section -->
+    <section class="section">
+        <p class="section-title mb-3"><b>Contact me</b></p>
+        <div class="card">
+            <form action="" method="post" class="contact-form col-md-10 col-lg-8 m-auto">
+                {% csrf_token %}
+                <div class="row mt-3">
+                    <div class="group col-sm-6 mb-3">
+                        <input type="text" name="message_subject" size="50" class="form-control" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group col-sm-6 mb-3">
+                        <input type="email" name="email" class="form-control" placeholder="Email" requried>
+                    </div>
+                    <div class="form-group col-sm-12 mt-3">
+                        <textarea name="comment" id="comment" name="comment" rows="6" class="form-control" placeholder="Say to me 💬"></textarea>
+                    </div>
+                    <div class="form-group col-sm-12 mt-3">
+                        <p>This will send your message to my telegram 💬</p>
+                    </div>
+                    <div class="form-group col-sm-12 mt-3 mb-3">
+                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded"
+                        >
+                    </div>
+                </div>
+            </form><!-- end of contact form -->
+        </div><!-- end of container -->
+    </section>
+    <!-- end of contact section -->
+</div>
+{% include 'shared/footer.html' %}
