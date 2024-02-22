@@ -3,11 +3,11 @@
       {% if edu_timelines %}
         {% for edu in edu_timelines %}
           <li class="timeline-item mb-5">
-            <h5 class="fw-bold" style="color: #656d76;">{{ edu.title }}</h5>
+            <h5 class="" style="color: #0969da;">{{ edu.title }}</h5>
             <p style="color: #656d76;">
-              {{ edu.started_date|date:'Y-m-d' }} - {{ edu.ended_date|date:'Y-m-d' }}
+              Date {{ edu.started_date|date:'Y' }} - {{ edu.ended_date|date:'Y' }}
             </p>
-            <div class="text-muted">
+            <div class="mt-2">
               {{ edu.content|safe }}
             </div>
           </li>

@@ -3,11 +3,11 @@
       {% if working_timelines %}
         {% for timeline in working_timelines %}
           <li class="timeline-item mb-5">
-            <h5 class="fw-bold" style="color: #656d76;">{{ timeline.title }}</h5>
-            <p style="color: #656d76;">
-              {{ timeline.started_date|date:'Y-m-d' }} - {{ timeline.ended_date|date:'Y-m-d' }}
+            <h5 class="" style="color: #0969da;">{{ timeline.title }}</h5>
+            <p style="color: #656d76; font-size: 14px;">
+              Date: {{ timeline.started_date|date:'Y' }} - {{ timeline.ended_date|date:'Y' }}
             </p>
-            <div class="text-muted">
+            <div class="mt-2">
               {{ timeline.content|safe }}
             </div>
           </li>
