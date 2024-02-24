@@ -1,6 +1,6 @@
 {% load static %}
 {% include 'shared/header.html' %}
-<style>
+<!-- <style>
     .errorlist {
         font-size: 14px !important;
     }
@@ -16,7 +16,6 @@
                 {{ field.label_tag }}
                 {{ field }}
             {% endfor %}
-            <!-- Display erros message -->
             {% if register_form.errors %}
             <div class="alert alert-danger">
                 <p>An errors occured</p>
@@ -29,5 +28,5 @@
             </div>
         </form>
     </div>
-</div>
+</div> -->
 {% include 'shared/footer.html' %}
