@@ -41,5 +41,5 @@ def home(request):
     return render(request, "portfolio/home.html", context)
 
 
-# def thank(request):
-#     return render(request, 'portfolio/thank.html')
+def review_user_account(request):
+    return render(request, 'portfolio/in-review.html')
