@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'portfolio',
     'blog',
     'django_ckeditor_5',
-    'django_otp',
-    'django_otp.plugins.otp_totp',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -48,10 +47,6 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-
-    'django_otp.middleware.OTPMiddleware',
-
-
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
@@ -128,7 +123,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'  # URL to serve media files
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')  # Absolute filesystem path to the media directory
+MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')  # Absolute filesystem path to the media directory
 
 
 customColorPalette = [
@@ -223,3 +218,6 @@ CKEDITOR_5_CONFIGS = {
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AUTH_USER_MODEL = "users.CustomUser"

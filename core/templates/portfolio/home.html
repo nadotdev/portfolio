@@ -15,26 +15,31 @@
 
     <hr>
     <!-- Technology -->
-    <section>
+    <section class="section"> 
         <p class="section-title mb-3"><b>Technologies</b></p>
-            <div class="row ">
-            {% for tech in technologies %}
-
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                          <div class="card-body">
-                             <p class="card-text">{{ tech.title }}</p>
-                              <p style="font-size: 14px; margin-top: 8px;">
-                                  <span class="repo-language-color" style="background-color: #3572A5"></span>
-                                    {{ tech.sub_title}}
-                                  </p>
-                          </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {% if technologies %}
+                    {% for tech in technologies %}
+                        <div class="col-md-6 mb-3">
+                            <div class="card">
+                            <div class="card-body">
+                                <p class="card-text">{{ tech.title }}</p>
+                                <p style="font-size: 14px; margin-top: 8px;">
+                                    <span class="repo-language-color" style="background-color: #0f9531"></span>
+                                        {{ tech.sub_title}}
+                                    </p>
+                            </div>
+                            </div>
                         </div>
-                    </div>
-
-            {% endfor %}
+                    {% endfor %}
+                {% else %}
+                <div class="card">
+                    <p class="">No technologies yet.</p>
+                </div>
+                {% endif %}
+                </div>
             </div>
-
     </section>
     <hr>
     <section class="section">

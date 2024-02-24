@@ -1,0 +1,33 @@
+{% load static %}
+{% include 'shared/header.html' %}
+<style>
+    .errorlist {
+        font-size: 14px !important;
+    }
+</style>
+
+<div class="container">
+    <div class="card" style="max-width: 400px; margin: 0 auto; padding: 0 !important;">
+        <h4 class="mb-1 text-center" style="background-color: #212529; color: #fff; padding: 20px;">Register</h4>
+        <hr>
+        <form method="post" style="padding: 30px;">
+            {% csrf_token %}
+            {% for field in register_form.visible_fields %}
+                {{ field.label_tag }}
+                {{ field }}
+            {% endfor %}
+            <!-- Display erros message -->
+            {% if register_form.errors %}
+            <div class="alert alert-danger">
+                <p>An errors occured</p>
+                {{ register_form.errors }}
+            </div>
+            {% endif %}
+            <hr>
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-sm btn-outline-primary ">Sign up</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% include 'shared/footer.html' %}
