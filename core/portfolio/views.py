@@ -1,5 +1,5 @@
-from django.http import HttpResponse, HttpResponseServerError
-from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
 
 import requests
 import urllib.parse
@@ -23,19 +23,23 @@ def home(request):
         url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&parse_mode=HTML&text={encoded_text}"
         requests.get(url).json()    # sends the message trigger
         if HttpResponse.status_code == 200:
-            return render(request, 'portfolio/thank.html')
+            return redirect('/thanks')
         
     # render object of timelines to home page
     working_timelines = WorkingTimeline.objects.all()
     edu_timelines = Education.objects.all()
     # about = get_object_or_404(About, id=None)
-    about_obj = About.objects.latest('created_at')
+    # about_obj = About.objects.latest('created_at')
     technologies = Technology.objects.all()
 
     context = {
         'working_timelines': working_timelines,
         'edu_timelines': edu_timelines,
-        'about_obj': about_obj,
+        # 'about_obj': about_obj,
         'technologies': technologies
     }      
     return render(request, "portfolio/home.html", context)
+
+
+def thank(request):
+    return render(request, 'portfolio/thank.html')
