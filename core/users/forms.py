@@ -1,7 +1,9 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-
 from .models import CustomUser
+from django_recaptcha.fields import ReCaptchaField
+from django_recaptcha.widgets import ReCaptchaV2Invisible
+
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -38,11 +40,10 @@ class RegisterForm(UserCreationForm):
         self.fields['password2'].error_messages = {} 
 
     email = forms.EmailField(max_length=200)
-
+    captcha = ReCaptchaField()
 
     class Meta:
         model = CustomUser
-        fields = ('email', 'password1', 'password2')
-
+        fields = ('email', 'password1', 'password2', 'captcha')
 
     email.widget.attrs.update({"class": "form-control form-control-sm mb-2"})

@@ -1,0 +1,22 @@
+{% load static %}
+{% include 'shared/header.html' %}
+<style>
+    .errorlist {
+        font-size: 14px !important;
+    }
+</style>
+<div class="container">
+    <div class="card" style="max-width: 400px; margin: 0 auto; padding: 0 !important;">
+        <h5 class="mb-1 text-center" style="background-color: #212529; color: #fff; padding: 20px;">Login</h5>
+        <form method="post" class="form-signin" style="padding: 30px;">
+            {% csrf_token %}
+            {{ forms.as_p }}
+
+            <button type="submit" class="btn btn-sm btn-outline-secondary">Login</button>
+        </form>
+    
+    
+    </div>
+</div>
+   
+{% include 'shared/footer.html' %}

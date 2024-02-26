@@ -3,7 +3,7 @@
       {% if edu_timelines %}
         {% for edu in edu_timelines %}
           <li class="timeline-item mb-5">
-            <h5 class="" style="color: #0969da;">{{ edu.title }}</h5>
+            <h5 class="" style="color: #0969da; font-weight: 700;">{{ edu.title }}</h5>
             <p style="color: #656d76; font-size: 14px;">
               From: {{ edu.started_date|date:'Y' }} - {{ edu.ended_date|date:'Y' }}
             </p>

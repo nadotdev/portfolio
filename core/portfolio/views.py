@@ -28,14 +28,13 @@ def home(request):
     # render object of timelines to home page
     working_timelines = WorkingTimeline.objects.all()
     edu_timelines = Education.objects.all()
-    # about = get_object_or_404(About, id=None)
-    # about_obj = About.objects.latest('created_at')
+    about_obj = About.objects.latest('created_at')
     technologies = Technology.objects.all()
 
     context = {
         'working_timelines': working_timelines,
         'edu_timelines': edu_timelines,
-        # 'about_obj': about_obj,
+        'about_obj': about_obj,
         'technologies': technologies
     }      
     return render(request, "portfolio/home.html", context)

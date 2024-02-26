@@ -1,5 +1,5 @@
 from django.contrib import admin
-from portfolio.models import WorkingTimeline
+from portfolio.models import WorkingTimeline, Education, Technology, About
 
 
 admin.site.site_header="Cloudna Administration"
@@ -14,3 +14,6 @@ class WorkingTimelineAdmin(admin.ModelAdmin):
 
 
 admin.site.register(WorkingTimeline, WorkingTimelineAdmin)
+admin.site.register(Education)
+admin.site.register(Technology)
+admin.site.register(About)

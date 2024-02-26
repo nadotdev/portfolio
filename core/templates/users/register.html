@@ -8,22 +8,20 @@
 
 <div class="container">
     <div class="card" style="max-width: 400px; margin: 0 auto; padding: 0 !important;">
-        <h5 class="mb-1 text-center" style="background-color: #212529; color: #fff; padding: 20px;">Register to Cloudna</h5>
-        <hr>
+        <h5 class="mb-1 text-center" style="background-color: #212529; color: #fff; padding: 20px;">Register</h5>
         <form method="post" style="padding: 30px;">
             {% csrf_token %}
             {% for field in register_form.visible_fields %}
                 {{ field.label_tag }}
                 {{ field }}
             {% endfor %}
+
             {% if register_form.errors %}
-            <div class="alert alert-danger">
-                <p>An errors occured</p>
-                {{ register_form.errors }}
-            </div>
+                <div class="alert alert-danger">
+                    {{ register_form.errors }}
+                </div>
             {% endif %}
-            <hr>
-            <div class="text-center mt-3">
+            <div class="text-center mt-4">
                 <button type="submit" class="btn btn-sm btn-outline-primary ">Register</button>
             </div>
         </form>

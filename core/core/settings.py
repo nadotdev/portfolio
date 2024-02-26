@@ -12,6 +12,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -37,8 +39,10 @@ INSTALLED_APPS = [
     'portfolio',
     'blog',
     'django_ckeditor_5',
+    'django_recaptcha',
     'users',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -122,8 +126,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/media/'  # URL to serve media files
-MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')  # Absolute filesystem path to the media directory
+MEDIA_URL = 'media/'  # URL to serve media files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
 customColorPalette = [
@@ -221,3 +225,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = "users.CustomUser"
+
+
+RECAPTCHA_PUBLIC_KEY = '6LfJA4ApAAAAAGh9uZo0bkbE458Vk22tmaTop50f'
+RECAPTCHA_PRIVATE_KEY = '6LfJA4ApAAAAAE1d4Yb3kyhAtD8VRDfiGc6rZ-sH'
