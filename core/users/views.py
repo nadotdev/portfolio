@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
+from django.views.decorators.http import require_http_methods
 
+@require_http_methods(["GET", "POST"])
 def register(request):
     """
         For user registration form and checking validation

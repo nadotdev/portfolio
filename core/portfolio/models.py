@@ -41,3 +41,8 @@ class Technology(models.Model):
     sub_title = models.CharField(max_length=255, blank=False, null=False, default=None)
 
 
+class Skill(models.Model):
+    """
+        Skill timelines
+    """
+    title = models.CharField(max_length=255, blank=False, null=False, default=None)

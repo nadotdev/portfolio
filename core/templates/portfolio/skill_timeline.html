@@ -1,0 +1,13 @@
+<!-- Section: Timeline -->
+<ul class="timeline">
+    {% if skill_object %}
+      {% for skill in skill_object %}
+        <li class="timeline-item mb-5">
+          <h5 class="" style="color: #0969da; font-weight: 700;">{{ skill.title }}</h5>
+        </li>
+      {% endfor %}
+    {% else %}
+      <p style="color: #656d76; font-size: 14px;">No skills yet.</p>
+    {% endif %}
+  </ul>
+<!-- Section: Timeline -->

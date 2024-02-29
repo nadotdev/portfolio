@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 
 # import requests
 # import urllib.parse
-from portfolio.models import WorkingTimeline, Education, About, Technology
+from portfolio.models import Skill, WorkingTimeline, Education, About, Technology
 
 
 # TOKEN = "6728604177:AAHzoNld4gEaTg0AXAYGes3C9vE4RPbpk48"
@@ -30,12 +30,13 @@ def home(request):
     edu_timelines = Education.objects.all()
     about_obj = About.objects.latest('created_at')
     technologies = Technology.objects.all()
-
+    skill_object = Skill.objects.all()
     context = {
         'working_timelines': working_timelines,
         'edu_timelines': edu_timelines,
         'about_obj': about_obj,
-        'technologies': technologies
+        'technologies': technologies,
+        'skill_object': skill_object
     }      
     return render(request, "portfolio/home.html", context)
 
